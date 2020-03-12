@@ -1,14 +1,12 @@
-import React, {Component} from 'react';
-
+import React from 'react';
 import CanvasJSReact from "../../services/canvasjs.react";
-var CanvasJS = CanvasJSReact.CanvasJS;
-var CanvasJSChart = CanvasJSReact.CanvasJSChart;
+let CanvasJS = CanvasJSReact.CanvasJS;
+let CanvasJSChart = CanvasJSReact.CanvasJSChart;
 
 function LineChart(props) {
-    var total = 0;
-    var test = [];
+    let test = [];
     props.data.map(function (hit) {
-        var date = new Date(hit.created_at);
+        let date = new Date(hit.created_at);
         if (date.getMonth() == 2 && 5 == date.getDate()) {
             test.push(date.getDate());
             return date.getDate();
@@ -33,7 +31,6 @@ function LineChart(props) {
             xValueFormatString: "MMMM",
             type: "spline",
             dataPoints: [
-
                 { x: new Date(2017, 0), y: 25060 },
                 { x: new Date(2017, 1), y: 27980 },
                 { x: new Date(2017, 2), y: 42800 },
